@@ -3121,77 +3121,77 @@
       "image_key": "story_2018",
       "section": "Story Timeline",
       "label": "2018 – Founded in Dubai",
-      "image_url": "/images/mizu/DSC02030-Edit.webp",
+      "image_url": "/images/about/mizuabtext.webp",
       "image_alt": "Mizu Japanese Cuisine restaurant founded in Downtown Dubai",
       "display_order": 1,
       "created_at": "2026-03-27T09:37:00Z",
-      "updated_at": "2026-04-11T10:25:24Z"
+      "updated_at": "2026-04-11T10:33:39Z"
     },
     {
       "id": "about-002",
       "image_key": "story_2020",
       "section": "Story Timeline",
       "label": "2020 – Expanded the Omakase Bar",
-      "image_url": "/images/mizu/DSC02673-Edit.webp",
+      "image_url": "/images/about/familylunch.webp",
       "image_alt": "Mizu expanded omakase bar with warm ambient lighting",
       "display_order": 2,
       "created_at": "2026-03-27T09:37:00Z",
-      "updated_at": "2026-04-11T10:25:24Z"
+      "updated_at": "2026-04-11T10:33:39Z"
     },
     {
       "id": "about-003",
       "image_key": "story_2022",
       "section": "Story Timeline",
       "label": "2022 – Named Best Japanese in Dubai",
-      "image_url": "/images/mizu/DSC02295.webp",
+      "image_url": "/images/about/best.webp",
       "image_alt": "Award-winning sushi platter at Mizu Dubai",
       "display_order": 3,
       "created_at": "2026-03-27T09:37:00Z",
-      "updated_at": "2026-04-11T10:25:24Z"
+      "updated_at": "2026-04-11T10:33:39Z"
     },
     {
       "id": "about-004",
       "image_key": "story_2024",
       "section": "Story Timeline",
       "label": "2024 – Our Expert Sushi Chefs",
-      "image_url": "/images/mizu/DSC02463.webp",
+      "image_url": "/images/about/chef.webp",
       "image_alt": "Mizu expert sushi chef preparing fresh sushi",
       "display_order": 4,
       "created_at": "2026-03-27T09:37:00Z",
-      "updated_at": "2026-04-11T10:25:24Z"
+      "updated_at": "2026-04-11T10:33:39Z"
     },
     {
       "id": "about-005",
       "image_key": "story_2026",
       "section": "Story Timeline",
       "label": "2026 – Continuing the Journey",
-      "image_url": "/images/mizu/DSC02843.webp",
+      "image_url": "/images/about/mizuabtext-1.webp",
       "image_alt": "Elegant sushi presentation at Mizu restaurant",
       "display_order": 5,
       "created_at": "2026-03-27T09:37:00Z",
-      "updated_at": "2026-04-11T10:25:24Z"
+      "updated_at": "2026-04-11T10:33:39Z"
     },
     {
       "id": "about-006",
       "image_key": "philosophy_main",
       "section": "Philosophy Section",
       "label": "Philosophy – Main Image",
-      "image_url": "/images/mizu/DSC02881.webp",
+      "image_url": "/images/about/mastery.webp",
       "image_alt": "Mizu head chef preparing omakase nigiri with precision",
       "display_order": 6,
       "created_at": "2026-03-27T09:37:00Z",
-      "updated_at": "2026-04-11T10:25:24Z"
+      "updated_at": "2026-04-11T10:33:39Z"
     },
     {
       "id": "about-007",
       "image_key": "philosophy_secondary",
       "section": "Philosophy Section",
       "label": "Philosophy – Secondary Image",
-      "image_url": "/images/mizu/DSC02059-Edit.webp",
+      "image_url": "/images/about/mastery1.webp",
       "image_alt": "Close up of sushi preparation at Mizu",
       "display_order": 7,
       "created_at": "2026-03-27T09:37:00Z",
-      "updated_at": "2026-04-11T10:25:24Z"
+      "updated_at": "2026-04-11T10:33:39Z"
     }
   ],
   "auth": {
