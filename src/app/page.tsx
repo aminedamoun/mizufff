@@ -3,12 +3,12 @@ import type { Metadata } from 'next';
 import Header from '@/components/common/Header';
 import Footer from '@/components/common/Footer';
 
-import HeroSection from './components/HeroSection';
-import FeaturedMenu from './components/FeaturedMenu';
-import OffersSection from './components/OffersSection';
-import MarqueeSection from './components/MarqueeSection';
-import ExperienceSection from './components/ExperienceSection';
-import LocationSection from './components/LocationSection';
+import HeroSection from './homepage/components/HeroSection';
+import FeaturedMenu from './homepage/components/FeaturedMenu';
+import OffersSection from './homepage/components/OffersSection';
+import MarqueeSection from './homepage/components/MarqueeSection';
+import ExperienceSection from './homepage/components/ExperienceSection';
+import LocationSection from './homepage/components/LocationSection';
 
 export const metadata: Metadata = {
   title: 'Mizu – Authentic Japanese Sushi | Downtown Dubai',

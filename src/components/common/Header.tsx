@@ -9,7 +9,6 @@ import Icon from '@/components/ui/AppIcon';
 const navLinks = [
   { id: 'nav_menu', label: 'Menu', href: '/menu' },
   { id: 'nav_about', label: 'About', href: '/about' },
-  { id: 'nav_experience', label: 'Experience', href: '/homepage#experience' },
   { id: 'nav_reservations', label: 'Reservations', href: '/reservations' },
   { id: 'nav_delivery', label: 'Delivery', href: '/delivery' },
   { id: 'nav_contact', label: 'Contact', href: '/contact' },
@@ -43,7 +42,7 @@ export default function Header() {
       >
         <div className="max-w-[1600px] mx-auto px-6 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/homepage">
+          <Link href="/">
             <AppLogo size={64} />
           </Link>
 

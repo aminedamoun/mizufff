@@ -3,7 +3,7 @@ import Link from 'next/link';
 import AppLogo from '@/components/ui/AppLogo';
 
 const footerLinks = [
-  { id: 'ft_home', label: 'Home', href: '/homepage' },
+  { id: 'ft_home', label: 'Home', href: '/' },
   { id: 'ft_menu', label: 'Menu', href: '/menu' },
   { id: 'ft_reservations', label: 'Reservations', href: '/reservations' },
   { id: 'ft_about', label: 'About', href: '/about' },
@@ -18,7 +18,7 @@ export default function Footer() {
       <div className="max-w-[1600px] mx-auto px-6 py-16">
         {/* Main row */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-10 mb-12">
-          <Link href="/homepage">
+          <Link href="/">
             <AppLogo size={64} />
           </Link>
 
@@ -66,6 +66,14 @@ export default function Footer() {
             <Link href="#" className="text-xs uppercase tracking-widest-2 text-white/40 hover:text-white/60 transition-colors font-medium">
               Terms
             </Link>
+            <a
+              href="https://dubaiprod.com"
+              target="_blank"
+              rel="noopener"
+              className="text-xs uppercase tracking-widest-2 text-white/40 hover:text-white/60 transition-colors font-medium"
+            >
+              Website by dubaiprod.com
+            </a>
           </div>
         </div>
       </div>

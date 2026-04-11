@@ -11,11 +11,6 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: 'Mizu - Premium Japanese Restaurant & Sushi Bar',
   description: 'Experience authentic Japanese cuisine at Mizu. Premium sushi, omakase, and signature rolls crafted by expert chefs in Dubai.',
-  icons: {
-    icon: [
-      { url: '/assets/images/app_logo.webp', type: 'image/x-icon' }
-    ],
-  },
 };
 
 export default function RootLayout({
