@@ -28,7 +28,7 @@ function mapRow(row: any): DeliveryPartner {
 
 export const deliverySettingsService = {
   async getAllPartners(): Promise<DeliveryPartner[]> {
-    const res = await fetch('/api/delivery');
+    const res = await fetch('/api/delivery', { cache: 'no-store' });
     if (!res.ok) return [];
     const data = await res.json();
     return data.map(mapRow);

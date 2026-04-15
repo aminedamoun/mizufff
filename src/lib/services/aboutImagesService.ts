@@ -28,14 +28,14 @@ function mapRow(row: any): AboutPageImage {
 
 export const aboutImagesService = {
   async getAllImages(): Promise<AboutPageImage[]> {
-    const res = await fetch('/api/about-images');
+    const res = await fetch('/api/about-images', { cache: 'no-store' });
     if (!res.ok) return [];
     const data = await res.json();
     return data.map(mapRow);
   },
 
   async getImageByKey(key: string): Promise<AboutPageImage | null> {
-    const res = await fetch(`/api/about-images?key=${encodeURIComponent(key)}`);
+    const res = await fetch(`/api/about-images?key=${encodeURIComponent(key)}`, { cache: 'no-store' });
     if (!res.ok) return null;
     const data = await res.json();
     return data ? mapRow(data) : null;

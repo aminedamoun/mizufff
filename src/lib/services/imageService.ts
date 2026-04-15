@@ -30,7 +30,7 @@ function mapImage(row: any): RestaurantImage {
 
 export const imageService = {
   async getAllImages(): Promise<RestaurantImage[]> {
-    const res = await fetch('/api/images');
+    const res = await fetch('/api/images', { cache: 'no-store' });
     if (!res.ok) return [];
     const data = await res.json();
     return data.map(mapImage);
@@ -79,7 +79,7 @@ export const imageService = {
   },
 
   async getActiveImages(): Promise<RestaurantImage[]> {
-    const res = await fetch('/api/images?active=true');
+    const res = await fetch('/api/images?active=true', { cache: 'no-store' });
     if (!res.ok) return [];
     const data = await res.json();
     return data.map(mapImage);

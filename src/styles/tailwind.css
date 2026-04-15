@@ -316,6 +316,28 @@ body {
   background: #111111;
   color: #FFFFFF;
 }
+/* Admin panel: give textareas and selects a full border */
+textarea.form-input,
+select.form-input {
+  border: 1px solid #333333;
+  border-radius: 4px;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.03);
+}
+textarea.form-input:focus,
+select.form-input:focus {
+  border-color: #E10600;
+}
+/* File input styling in admin */
+input[type="file"].form-input {
+  border: 1px dashed #333333;
+  border-radius: 4px;
+  padding: 10px 12px;
+  cursor: pointer;
+}
+input[type="file"].form-input:hover {
+  border-color: #555555;
+}
 
 /* Red button */
 .btn-red {

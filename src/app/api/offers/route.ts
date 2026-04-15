@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { readDb, writeDb, generateId, nowISO } from '@/lib/local-db';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET(req: NextRequest) {
   const db = readDb();
   const { searchParams } = new URL(req.url);

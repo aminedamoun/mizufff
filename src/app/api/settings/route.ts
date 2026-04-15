@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { readDb, writeDb, nowISO } from '@/lib/local-db';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET() {
   const db = readDb();
   return NextResponse.json(db.site_settings || { banner_video_url: '/images/hero/banner-video.mp4' });

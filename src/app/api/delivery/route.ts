@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { readDb, writeDb, nowISO } from '@/lib/local-db';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET() {
   const db = readDb();
   const sorted = [...db.delivery_settings].sort(

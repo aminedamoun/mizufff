@@ -30,14 +30,14 @@ function mapOffer(row: any): Offer {
 
 export const offerService = {
   async getAllOffers(): Promise<Offer[]> {
-    const res = await fetch('/api/offers');
+    const res = await fetch('/api/offers', { cache: 'no-store' });
     if (!res.ok) return [];
     const data = await res.json();
     return data.map(mapOffer);
   },
 
   async getActiveOffers(): Promise<Offer[]> {
-    const res = await fetch('/api/offers?active=true');
+    const res = await fetch('/api/offers?active=true', { cache: 'no-store' });
     if (!res.ok) return [];
     const data = await res.json();
     return data.map(mapOffer);
