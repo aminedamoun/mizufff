@@ -1,52 +1,29 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import AppImage from '@/components/ui/AppImage';
+import { menuService, type MenuItem } from '@/lib/services/menuService';
 
-const featuredItems = [
-{
-  id: 'feat_1',
-  name: 'Dragon Roll',
-  description: 'Tempura shrimp, avocado, cucumber topped with thinly sliced avocado and tobiko',
-  price: 'AED 85',
-  image: "/images/mizu/DSC02254-Edit.webp",
-  alt: 'Mizu Dragon Roll with avocado and tobiko on wooden board',
-  tag: 'Signature'
-},
-{
-  id: 'feat_2',
-  name: 'Bluefin Tuna Sashimi',
-  description: 'Premium bluefin tuna, aged 7 days, served with freshly grated wasabi and pickled ginger',
-  price: 'AED 120',
-  image: "/images/mizu/DSC03000.webp",
-  alt: 'Fresh salmon sashimi served on wooden plate at Mizu',
-  tag: 'Premium'
-},
-{
-  id: 'feat_3',
-  name: 'Omakase Set',
-  description: 'Chef\'s selection of 12-piece nigiri featuring the finest seasonal catches, daily curated',
-  price: 'AED 280',
-  image: "/images/mizu/DSC02706.webp",
-  alt: 'Mizu sushi boat platter with assorted signature rolls',
-  tag: 'Chef\'s Choice'
-},
-{
-  id: 'feat_4',
-  name: 'Wagyu Nigiri',
-  description: 'A5 Japanese Wagyu beef torched with yuzu butter glaze, served on hand-pressed shari',
-  price: 'AED 95',
-  image: "/images/mizu/DSC02912-Edit.webp",
-  alt: 'Premium signature rolls platter at Mizu restaurant',
-  tag: 'A5 Grade'
-}];
-
+const SIGNATURE_CATEGORY_ID = 'cat-008-mizu-speciality-maki';
+const FEATURED_COUNT = 4;
 
 export default function FeaturedMenu() {
   const sectionRef = useRef<HTMLElement>(null);
+  const [featuredItems, setFeaturedItems] = useState<MenuItem[]>([]);
 
   useEffect(() => {
+    menuService.getAllItems().then((items) => {
+      const signatures = items
+        .filter((i) => i.categoryId === SIGNATURE_CATEGORY_ID && i.isAvailable)
+        .sort((a, b) => a.displayOrder - b.displayOrder)
+        .slice(0, FEATURED_COUNT);
+      setFeaturedItems(signatures);
+    });
+  }, []);
+
+  useEffect(() => {
+    if (featuredItems.length === 0) return;
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -62,7 +39,7 @@ export default function FeaturedMenu() {
     );
     if (sectionRef?.current) observer?.observe(sectionRef?.current);
     return () => observer?.disconnect();
-  }, []);
+  }, [featuredItems]);
 
   return (
     <section ref={sectionRef} className="py-32 bg-black relative z-10">
@@ -94,16 +71,16 @@ export default function FeaturedMenu() {
           <div key={item?.id} className="menu-card group reveal">
               <div className="image-zoom aspect-[4/3] overflow-hidden relative">
                 <AppImage
-                src={item?.image}
-                alt={item?.alt}
+                src={item?.imageUrl}
+                alt={item?.imageAlt || item?.name}
                 className="w-full h-full object-cover" />
               </div>
               <div className="p-5">
                 <div className="flex items-start justify-between mb-2">
                   <span className="text-xs uppercase tracking-widest-2 text-primary font-semibold">
-                    {item?.tag}
+                    {item?.tag || 'Signature'}
                   </span>
-                  <span className="price-tag">{item?.price}</span>
+                  <span className="price-tag">AED {item?.price}</span>
                 </div>
                 <h3 className="font-display text-xl text-white mb-2 font-light">{item?.name}</h3>
                 <p className="text-base text-white/40 leading-relaxed mb-4">{item?.description}</p>
@@ -112,7 +89,7 @@ export default function FeaturedMenu() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm uppercase tracking-widest-2 text-white/40 hover:text-white transition-colors hover-line">
-                
+
                   Order
                 </a>
               </div>
